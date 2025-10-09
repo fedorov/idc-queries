@@ -1,0 +1,38 @@
+title: Count instances by modality
+description: |
+  Returns the count of DICOM instances for each imaging modality
+  available in IDC. This helps understand the distribution of
+  different imaging types (CT, MR, PT, etc.) in the database.
+keywords:
+  - modality
+  - instances
+  - counts
+  - overview
+  - basic
+idc_version: "current"
+difficulty: basic
+estimated_cost: low
+sql: |
+  SELECT 
+    Modality,
+    COUNT(*) as instance_count
+  FROM 
+    `bigquery-public-data.idc_current.dicom_all`
+  WHERE
+    Modality IS NOT NULL
+  GROUP BY 
+    Modality
+  ORDER BY 
+    instance_count DESC
+notes: |
+  This query provides a high-level overview of imaging modalities
+  available in IDC. Common modalities include:
+  - CT: Computed Tomography
+  - MR: Magnetic Resonance
+  - PT: Positron Emission Tomography
+  - NM: Nuclear Medicine
+  - US: Ultrasound
+  - DX: Digital Radiography
+  - MG: Mammography
+related_queries:
+  - queries/basic/count_studies_by_collection.yaml

@@ -1,0 +1,28 @@
+title: Count studies by collection
+description: |
+  Returns the number of studies in each collection in IDC.
+  Useful for getting an overview of dataset sizes and understanding
+  the distribution of imaging data across different collections.
+keywords:
+  - collections
+  - studies
+  - counts
+  - basic
+  - overview
+idc_version: "current"
+difficulty: basic
+estimated_cost: low
+sql: |
+  SELECT 
+    collection_id,
+    COUNT(DISTINCT StudyInstanceUID) as study_count
+  FROM 
+    `bigquery-public-data.idc_current.dicom_all`
+  GROUP BY 
+    collection_id
+  ORDER BY 
+    study_count DESC
+notes: |
+  This query scans minimal data and is suitable for exploring
+  the structure of IDC collections. It's a good starting point
+  for understanding what data is available in IDC.
