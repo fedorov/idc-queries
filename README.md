@@ -182,6 +182,27 @@ for row in results:
     print(f"{row.collection_id}: {row.study_count} studies")
 ```
 
+## Validating Query Files
+
+A validation script is provided to check query files against the schema:
+
+```bash
+# Validate a single file
+python validate_query.py queries/basic/count_studies_by_collection.yaml
+
+# Validate all files in a directory
+python validate_query.py queries/basic/*.yaml
+
+# Validate all query files
+python validate_query.py queries/
+```
+
+The script checks for:
+- Required fields (title, description, keywords, sql)
+- Correct field types
+- Valid enum values (difficulty, estimated_cost)
+- Best practices (title length, LIMIT clauses)
+
 ## Contributing
 
 Contributions are welcome! When adding a new query:
@@ -189,7 +210,8 @@ Contributions are welcome! When adding a new query:
 2. Place the query in the appropriate category directory
 3. Use clear, descriptive naming (e.g., `count_ct_series_by_manufacturer.yaml`)
 4. Test your query against the latest IDC dataset
-5. Include helpful descriptions and notes
+5. Validate your query file using `validate_query.py`
+6. Include helpful descriptions and notes
 
 ## License
 
