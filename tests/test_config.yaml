@@ -1,0 +1,54 @@
+# Test Configuration for IDC BigQuery Queries
+#
+# This file defines the test parameters for the regression test suite.
+# The test runner uses this to determine which queries to test and how.
+
+# Query directory (relative to repo root)
+query_directory: queries
+
+# Test execution parameters
+test_parameters:
+  # LIMIT clause to append during testing (prevents large result output)
+  limit_for_tests: 1000
+  
+  # Variance threshold for updating query headers (10% = 0.10)
+  stat_update_variance_threshold: 0.10
+  
+  # Query timeout in seconds
+  query_timeout_seconds: 300
+
+# Production queries to execute fully (dry run + execution)
+execute_tests:
+  enabled: true
+  skip_empty_results: false  # Fail if query returns no results
+  
+# Pending queries to validate (dry run only, no execution)
+pending_tests:
+  enabled: true
+  skip_syntax_errors: false  # Fail if syntax check fails
+  
+# Results output
+results:
+  # Markdown summary table
+  markdown_output: tests/QUERY_TEST_RESULTS.md
+  
+  # JSON detailed results
+  json_output: tests/query_test_results.json
+  
+  # Include query content in results for debugging
+  include_query_content: false
+
+# CI/CD integration
+ci_integration:
+  # Fail the build if any production query fails
+  fail_on_production_error: true
+  
+  # Fail the build if pending queries have syntax errors
+  fail_on_pending_syntax_error: false
+  
+  # Create GitHub PR comment with results
+  post_pr_comment: true
+  
+  # Commit stat updates automatically
+  auto_commit_stats: true
+  commit_message: "Update query stats from regression tests"

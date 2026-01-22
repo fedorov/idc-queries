@@ -1,0 +1,18 @@
+-- Purpose: TODO - Select all unique CodeSequence tuples as strings
+-- 
+-- Complexity: Medium (Pending Completion)
+-- Estimated Cost: TBD | Bytes Scanned: TBD
+-- 
+-- Status: PENDING REVIEW
+-- Reason: Query is marked as TODO in original document - incomplete/needs work
+-- 
+-- Description:
+-- This query needs to be completed. The goal is to select all unique CodeSequence
+-- tuples as strings from DICOM objects. This is challenging because code sequences
+-- can be hiding behind different sequence attributes throughout the DICOM model.
+-- 
+-- Note: Requires investigation into appropriate approach and implementation.
+-- Author/Source: IDC Cookbook (incomplete)
+
+-- TODO: Complete this query
+-- SELECT ...

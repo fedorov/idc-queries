@@ -1,0 +1,10 @@
+# IDC BigQuery Queries - Python Dependencies
+
+# BigQuery client and authentication
+google-cloud-bigquery>=3.14.0
+google-auth>=2.25.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.2.0
+
+# Configuration and utilities
+pyyaml>=6.0
