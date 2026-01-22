@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# GCP credentials (never commit!)
+*.json
+gcp-key.json
+key.json
+/tmp/
+
+# Test outputs
+tests/query_test_results.json
+tests/QUERY_TEST_RESULTS.md
+
+# Artifacts
+*.pyc
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Temp files
+*.tmp
+*.temp
+.temporary/
